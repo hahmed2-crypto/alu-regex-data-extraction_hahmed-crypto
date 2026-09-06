@@ -1,0 +1,70 @@
+{
+  "emails": {
+    "si": [
+      "si.uwimana@si.alueducation.com",
+      "d.okoye@si.alueducation.com"
+    ],
+    "alumni": [
+      "grace.m@alumni.alueducation.com"
+    ],
+    "official": [
+      "j.uwimana@alueducation.com",
+      "aline.k@alueducation.com"
+    ],
+    "non_alu": [
+      "uwimana.jean94@gmail.com",
+      "finaid@gmail.com",
+      "t_mugisha88@yahoo.com",
+      "aline.karenzi.1999@outlook.com",
+      "davidokoye_official@hotmail.com"
+    ]
+  },
+  "phone_numbers": {
+    "rwandan": [
+      "+250788123456",
+      "+250 722 998 112"
+    ],
+    "international": [
+      "+1 (415) 555-0192",
+      "+234 803 555 1122"
+    ]
+  },
+  "credit_cards": {
+    "normal": [
+      "4111-1111-1111-1111",
+      "5500 0000 0000 0004",
+      "6011000000000004"
+    ],
+    "suspicious": [
+      "0000000000000000"
+    ]
+  },
+  "currency_records": {
+    "usd": [
+      "$1,200.00",
+      "2,500 USD",
+      "$980"
+    ],
+    "rwf": [
+      "RWF 450,000",
+      "RWF 1,250,500.75"
+    ],
+    "unlabeled_formats": [],
+    "negatives_detected": [
+      "-999999"
+    ]
+  },
+  "security_flags": {
+    "html_javascript_injection": [
+      "<script>",
+      "</script>"
+    ],
+    "sql_injection_attempts": [
+      "--",
+      ";",
+      "DROP TABLE",
+      ";",
+      "--"
+    ]
+  }
+}

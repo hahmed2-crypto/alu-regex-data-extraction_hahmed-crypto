@@ -1,0 +1,62 @@
+Subject: RE: Financial Aid Disbursement Queue - Batch #4471
+
+Hi team,
+
+Following up on the tickets from this week. Logging the applicant details below as they came in through the support portal and email. Please review before Friday's disbursement run.
+
+---
+
+Ticket #10231 - Applicant: J. Uwimana
+Contact email: j.uwimana@alueducation.com
+Backup contact: uwimana.jean94@gmail.com
+Phone: +250788123456
+Amount requested: $1,200.00 for Fall tuition balance.
+Card on file (for refund processing): 4111-1111-1111-1111
+Notes: Confirmed enrollment, SI status active - si.uwimana@si.alueducation.com also on record.
+
+Ticket #10232 - Applicant: Grace M.
+Email: grace.m@alumni.alueducation.com
+Phone number given as 0788 234 567 (missing country code, flagged for follow-up)
+Requested currency: RWF 450,000
+Card: 5500 0000 0000 0004
+<script>alert('test')</script> was pasted into the notes field by accident, ignoring.
+
+Ticket #10233 - New applicant, no ALU email on file yet.
+Personal email: t.mugisha+finaid@gmail.com
+Alt: t_mugisha88@yahoo.com
+Phone: +1 (415) 555-0192
+Amount: 2,500 USD requested for spring semester
+Card number entered: 340000000000009 (Amex, 15 digits - flagged, doesn't match our 16-digit format)
+
+Ticket #10234 - Suspicious submission, review before processing.
+Email field contained: '; DROP TABLE students; --
+Phone field: 000-000-0000
+Card field: 0000000000000000
+Amount: -999999
+This one should NOT be auto-approved under any circumstances.
+
+Ticket #10235 - Applicant: Aline K.
+alueducation.com email: aline.k@alueducation.com
+Personal backup: aline.karenzi.1999@outlook.com
+Phone: +250 722 998 112
+Amount requested: RWF 1,250,500.75
+Card on file: 4222222222222
+(only 13 digits entered - likely a Visa short format, needs manual check)
+
+Ticket #10236 - Applicant: David O., transferring from partner university
+Email: d.okoye@si.alueducation.com
+Secondary: davidokoye_official@hotmail.com
+Phone: +234 803 555 1122
+Requested: $980
+Card: 6011000000000004
+Note: also submitted a duplicate email that looks malformed - david@@alueducation..com - reject this one.
+
+Ticket #10237 - Test entry, ignore for processing but keep in log for QA.
+Email: not-an-email-at-all
+Phone: abc-def-ghij
+Card: card-number-unknown
+Amount: free money now!!! click here
+
+End of batch. Total tickets logged: 7 (one flagged as malicious, one as QA test data).
+
+- Financial Aid Ops Team
