@@ -30,17 +30,22 @@ Phone numbers: It starts by checking if the cobination of strings start with '+'
 
 Credit cards: It starts with group 4 by 4, 4 digits in four groups -> we remove or strip space,or dashes entirely so that digits become one string -> check if all of those digits identical-> if all identical print the card but only the last 4 digits because of security resoans and print suspisious text at the end -> if else print it normal card, also only yhe last 4 digits with a text telling us it normal card
 
-. Currency amounts: I start by setting the pattern to catch the $ and RWF at the front of the number and with different string multiplied or attached to the first string, we also check the USD at the end of the cobination of the digits -> in the loop, we catch what prefix and suffix are -> follow with if it is prefex and it is the actual of the signs "$" or "RWF" or suffixes of "USD" then store it and print in the console. In that way, we get digits starting with prefix of "$" and "RWF" at the front and numbers contain "USD" at the end.
+Currency amounts: I start by setting the pattern to catch the $ and RWF at the front of the number and with different string multiplied or attached to the first string, we also check the USD at the end of the cobination of the digits -> in the loop, we catch what prefix and suffix are -> follow with if it is prefex and it is the actual of the signs "$" or "RWF" or suffixes of "USD" then store it and print in the console. In that way, we get digits starting with prefix of "$" and "RWF" at the front and numbers contain "USD" at the end.
 
 Negative amounts: I start by searching for a dash -> followed by digits, but only if ther isn't already a digit right before the dash, to stop it from grapping pieces of credit card or phone numbers that just happen to haave a dash in them, and only catches real negative amounts like -99999 in my data.
 
 # Security Considerations
-Credit card numbers are masked in order to concile the whole card since we don't want people stealing those information
+Credit card numbers are masked in order to concile the whole card since we don't want people stealing those information.
+
 Credit cards where every digit is identical (e.g. all zeros in my raw-text.txt file) are flagged as suspicious rather than accepted as valid since that can't be real credit card.
+
 Negative currency amounts are flagged rather than silently treated as valid disbursement amounts.
+
 I wrote in the raw-text.txt file some malford data in order to make sure that the my regex scans tags(HTML) and sql(SQL patterns like ; DROP Table or Delete table) injections and reports back as flagged injection.
+
 On top of that, the program actively scans the whole file to find anything that looks like it is an HTML tag or a SQL command, and flags it whatever it finds separately in the output instead of just hoping hte other patterns skip over it. 
 
 # Known Limitations
-I am working on the duplicate credit card detection across multiple tickets
+I am working on the duplicate credit card detection across multiple tickets.
+
 The suspicious-card check only detects all-identical-digit patterns; it is not a full fraud-detection system.
