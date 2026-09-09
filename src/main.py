@@ -8,18 +8,18 @@ with open("input/raw-text.txt", "r", encoding="utf-8") as file:
     raw_data = file.read()
 
 
-#storing emails and validating it. 
-
+#storing emails in their formats
 si_emails = []
 alumni_emails = []
 alu_emails = []
 non_alu_emails = []
 
-regex_email = r"[a-zA-Z0-9_\.]+@[a-zA-Z0-9_\.]+\.com" # #Validatinng email addres using by reading the raw data file.
+regex_email = r"[a-zA-Z0-9_\.]+@[a-zA-Z0-9_\.]+\.com" # #Validatinng email addres by categoraizing what the alu emails are by reading the raw data file.
 
 
-matches = re.findall(regex_email, raw_data, re.IGNORECASE) # this runs through the whole raw data and finds emails matching below regex pattern and returns a list of all the emails found in the raw data file.
-for email in matches:
+matches = re.findall(regex_email, raw_data, re.IGNORECASE) 
+
+for email in matches:                                               #finding all the matches of alu emails regarding their domain format
     if  email .endswith("@si.alueducation.com"):
         si_emails.append(email)
         print(f"{email} -> SI ALU email")
@@ -40,7 +40,7 @@ for email in matches:
 rwandan_phones = []
 international_phones = []
 
-regex_phone_number = r'\+[\d\ \-\(\)]{7,17}'      
+regex_phone_number = r'\+[\d\ \-\(\)]{7,17}'      # for this i am looking through all set of numbers that starts with literal + sign and contain 0-9, literal - and are in range of 7 to 17 digits
 
 phone_matches = re.findall(regex_phone_number, raw_data)
 
@@ -74,7 +74,7 @@ for card in pattern:
 
 # not completely done with it because i need to do deletion of duplicates. 
 
-# Hree is my currency checking.
+# Hree is my currency checking/validation.
 
 usd_amounts = []
 rwf_amounts = []
@@ -82,19 +82,19 @@ unlabaled_format = []
 negative_alerts = []
 
 
-regex_currency_amount = r'(\$|RWF\s?)?(\d{1,3}(?:,\d{3})*(?:\.\d{2})?)(?:\s?(USD))?'
+regex_currency_amount = r'(\$|RWF\s?)?(\d{1,3}(?:,\d{3})*(?:\.\d{2})?)(?:\s?(USD))?' # I set this in groups of three matching different criteria( )
 
-# I use re.finditer to easily access group
-for match in re.finditer(regex_currency_amount, raw_data, re.IGNORECASE):
+
+for match in re.finditer(regex_currency_amount, raw_data, re.IGNORECASE): # I use re.finditer to easily access group
     full_match = match.group(0).strip()
     prefix = match.group(1)
     suffix = match.group(3)
     
-    # Here is a logic where i am trying to skip the , and . if they are not in full_match.
-    if not prefix and not suffix and ("," not in full_match) and ("." not in full_match):
+    
+    if not prefix and not suffix and ("," not in full_match) and ("." not in full_match):     # Here is a logic where i am trying to skip the , and . if they are not in full_match.
         continue
 
-    # Logic to identify the currency type
+                                                                                              # i am identifying the currency type
     if prefix and "$" in prefix:
         usd_amounts.append(full_match)
         print(f"{full_match} -> It is in USD ($ prefix)")
@@ -111,7 +111,7 @@ for match in re.finditer(regex_currency_amount, raw_data, re.IGNORECASE):
 
 
 #Finally, a way to know the negative numbers in the my data
-negative_amounts = re.findall(r'(?<!\d)-\d+', raw_data)
+negative_amounts = re.findall(r'(?<!\d)-\d+', raw_data)   # I am scanning for any numbers or sets of numbers with - at the start so t
 for amount in negative_amounts:
     negative_alerts.append(amount)
     print(f"{amount}-> Negative amount detected")
@@ -138,8 +138,7 @@ for match in html_matches:
 
 sql_matches = re.findall(regex_sql_cmd, raw_data, re.IGNORECASE) # Here is also another for loop that i am using to scan for any SQL pattern that matches that i defined in regex_sql_command in order to catch them and store them so that I store it separately from the clean data.
 for match in sql_matches:
-    # Double check to ensure we only capture actual risky syntax from the match
-    cleaned_match = match.strip()
+    cleaned_match = match.strip()          #    # Double check to ensure we only capture actual risky syntax from the match
     if cleaned_match:
         sql_injections.append(cleaned_match)
         print(f"SQL Injection detected -> {cleaned_match}")
@@ -173,10 +172,10 @@ parsed_financial_profile = {
         "sql_injection_attempts": sql_injections
     }
 }
+# done with printing or writing it on the sample-output.json file, it will order the file or store it in this way that i structureed it.
 
 
-
-# I want to visualise it so that we can see what is happening in my sample-output.json file.
+# I want to write it in the .json file so that we can see what is happening in my sample-output.json file.
 
 with open ("output/sample-output.json", "w", encoding="utf-8") as outfile:
     json.dump(parsed_financial_profile, outfile, indent=2)
