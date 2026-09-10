@@ -16,7 +16,8 @@
       "finaid@gmail.com",
       "t_mugisha88@yahoo.com",
       "aline.karenzi.1999@outlook.com",
-      "davidokoye_official@hotmail.com"
+      "davidokoye_official@hotmail.com",
+      "admin@alueducation..com"
     ]
   },
   "phone_numbers": {
@@ -57,7 +58,8 @@
   "security_flags": {
     "html_javascript_injection": [
       "<script>",
-      "</script>"
+      "</script>",
+      "<h.ahmed2@kentshill.org>"
     ],
     "sql_injection_attempts": [
       "--",
